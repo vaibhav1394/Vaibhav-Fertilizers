@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hariyali Agro Centre – खाद, बीज और सही सलाह</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Hind:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f4ec; --surface:#fff; --ink:#13241a; --muted:#52645a; --line:#d6dccb;
+  --green:#14532d; --green2:#1f7a43; --on-green:#f6f4ec; --sun:#ffb81c; --on-sun:#13241a;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1710;--surface:#14241a;--ink:#ecf2e6;--muted:#a5b6aa;--line:#2a4032;--green:#0b2e1a;--green2:#2e9a58;--on-green:#ecf2e6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1710;--surface:#14241a;--ink:#ecf2e6;--muted:#a5b6aa;--line:#2a4032;--green:#0b2e1a;--green2:#2e9a58;--on-green:#ecf2e6;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Hind,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--green);z-index:30}
+h1,h2,h3{font-family:"Bricolage Grotesque",Hind,Georgia,sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--green);color:var(--on-green)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;height:60px}
+.brand{font:800 19px "Bricolage Grotesque",sans-serif;text-decoration:none;display:flex;gap:8px;align-items:center}
+.brand i{font-style:normal;background:var(--sun);color:var(--on-sun);border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-size:16px}
+.right{display:flex;align-items:center;gap:8px}
+.lang{background:transparent;color:var(--on-green);border:1.5px solid var(--on-green);border-radius:999px;padding:5px 12px;font:600 14px Hind,sans-serif;cursor:pointer}
+.call{background:var(--sun);color:var(--on-sun);border-radius:999px;padding:7px 16px;font-weight:700;text-decoration:none;font-size:15px}
+.hero{background:var(--green);color:var(--on-green);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding-top:36px;padding-bottom:0}
+.hero h1{font-size:clamp(38px,8vw,72px);font-weight:800}
+.hero p{font-size:19px;max-width:44ch;margin:18px 0 26px;opacity:.93}
+.btns{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:36px}
+.btn{padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--sun);display:inline-block}
+.btn.main{background:var(--sun);color:var(--on-sun)}
+.btn.alt{color:var(--on-green)}
+.art{align-self:end}
+.art svg{width:100%;height:auto;display:block}
+.sun{animation:rise 1.4s ease-out both}
+@keyframes rise{from{transform:translateY(90px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.sun{animation:none}}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.art{order:-1;max-width:420px;margin:0 auto -4px}.hero .wrap{padding-top:16px}}
+.trust{background:var(--sun);color:var(--on-sun)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:14px;padding-bottom:14px;text-align:center;font-weight:700;font-size:15px}
+@media (max-width:640px){.trust .wrap{grid-template-columns:1fr 1fr}}
+section{padding:60px 0}
+h2{font-size:clamp(28px,5vw,42px);margin-bottom:8px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:16px;align-items:center}
+.bag{flex:none;width:74px;height:96px;border-radius:6px 6px 12px 12px;color:#fff;display:grid;place-items:center;text-align:center;font:800 13px/1.15 "Bricolage Grotesque",sans-serif;position:relative;padding-top:12px}
+.bag::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:rgba(0,0,0,.28);border-radius:6px 6px 0 0}
+.card h3{font-size:19px;margin-bottom:4px}
+.card p{margin:0;font-size:15px;color:var(--muted);line-height:1.45}
+.calc{background:var(--green);color:var(--on-green)}
+.calc .lead{color:var(--on-green);opacity:.85}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media (max-width:760px){.panel{grid-template-columns:1fr}}
+label{display:block;font-weight:600;margin-bottom:6px}
+select,input{width:100%;font:500 18px Hind,sans-serif;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink);margin-bottom:16px}
+.out{background:var(--surface);color:var(--ink);border-radius:14px;padding:20px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:18px}
+.row:last-of-type{border-bottom:0}
+.row b{font-family:"Bricolage Grotesque",Hind,sans-serif;font-size:22px;white-space:nowrap}
+.row small{display:block;color:var(--muted);font-size:14px}
+.fine{font-size:14px;color:var(--muted);margin:10px 0 0}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.visit{grid-template-columns:1fr}}
+.info p{margin:10px 0}
+.big{display:flex;flex-direction:column;gap:12px}
+.big a{padding:18px;border-radius:12px;font-weight:700;font-size:20px;text-decoration:none;text-align:center}
+.wa{background:#1fa855;color:#fff}.ph{background:var(--sun);color:var(--on-sun)}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;background:#1fa855;color:#fff;border-radius:999px;padding:13px 20px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+footer{padding:26px 0 90px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><i>🌾</i>Hariyali Agro Centre</a>
+    <div class="right">
+      <button class="lang" id="lang" aria-label="Change language">हिंदी</button>
+      <a class="call" href="tel:+910000000000" data-hi="फ़ोन करें">Call</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1 data-hi="खेत की सेहत, हमारी ज़िम्मेदारी">Your field’s health is our job.</h1>
+      <p data-hi="असली खाद, पूरा वज़न और सही सलाह, वैभव सिंह और उनकी टीम की ओर से।">Genuine fertilizer, full weight and straight advice from Vaibhav Singh and the team.</p>
+      <div class="btns">
+        <a class="btn main" href="https://wa.me/910000000000" data-hi="WhatsApp पर पूछें">Ask on WhatsApp</a>
+        <a class="btn alt" href="#calc" data-hi="खाद की मात्रा निकालें">Work out my dose</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 400 300">
+        <g class="sun"><circle cx="200" cy="170" r="70" fill="#ffb81c"/>
+        <g stroke="#ffb81c" stroke-width="6" stroke-linecap="round"><path d="M200 70v-30M130 100l-20-22M270 100l20-22M105 150H75M295 150h30"/></g></g>
+        <path d="M0 190Q200 150 400 190V300H0Z" fill="#1f7a43"/>
+        <path d="M0 225Q200 185 400 225V300H0Z" fill="#2e9a58"/>
+        <path d="M0 260Q200 225 400 260V300H0Z" fill="#14532d"/>
+        <g fill="none" stroke="#ffb81c" stroke-width="3" stroke-linecap="round">
+          <path d="M70 300V215M70 232l-12-10M70 232l12-10M70 218l-10-9M70 218l10-9"/>
+          <path d="M330 300V205M330 224l-12-10M330 224l12-10M330 209l-10-9M330 209l10-9"/>
+          <path d="M200 300V225M200 242l-12-10M200 242l12-10M200 229l-10-9M200 229l10-9"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="trust"><div class="wrap">
+  <span data-hi="✔ असली माल">✔ Genuine stock</span><span data-hi="✔ पूरा वज़न">✔ Full weight</span>
+  <span data-hi="✔ मुफ़्त सलाह">✔ Free advice</span><span data-hi="✔ पक्का बिल">✔ Proper bill</span>
+</div></div>
+
+<section id="products"><div class="wrap">
+  <h2 data-hi="हमारे पास क्या मिलता है">What we stock</h2>
+  <p class="lead" data-hi="आज का भाव दुकान पर पूछें। अंक बताते हैं नाइट्रोजन–फ़ॉस्फ़ोरस–पोटाश।">Ask at the counter for today’s rate. Numbers show Nitrogen–Phosphorus–Potash.</p>
+  <div class="grid">
+    <div class="card"><div class="bag" style="background:#2f6fb3">UREA<br>46-0-0</div><div><h3 data-hi="यूरिया">Urea</h3><p data-hi="पत्तियों और बढ़वार के लिए">For leafy growth in wheat, paddy, maize</p></div></div>
+    <div class="card"><div class="bag" style="background:#b5651d">DAP<br>18-46-0</div><div><h3 data-hi="डीएपी">DAP</h3><p data-hi="बुवाई के समय, मज़बूत जड़ों के लिए">At sowing, for strong roots</p></div></div>
+    <div class="card"><div class="bag" style="background:#b3262e">MOP<br>0-0-60</div><div><h3 data-hi="पोटाश (एमओपी)">Potash (MOP)</h3><p data-hi="दाने की चमक और रोग से बचाव">Fuller grain, better fruit, fewer diseases</p></div></div>
+    <div class="card"><div class="bag" style="background:#2e7d4f">NPK<br>10-26-26</div><div><h3 data-hi="एनपीके मिश्रित">NPK complex</h3><p data-hi="सब्ज़ियों और नकदी फ़सलों के लिए">One balanced dose for vegetables</p></div></div>
+    <div class="card"><div class="bag" style="background:#6b4aa5">SSP<br>0-16-0</div><div><h3 data-hi="एसएसपी">SSP</h3><p data-hi="सरसों, दलहन में फ़ॉस्फ़ोरस और गंधक">Phosphorus and sulphur for oilseeds, pulses</p></div></div>
+    <div class="card"><div class="bag" style="background:#8a6a00">ZINC<br>SULPHATE</div><div><h3 data-hi="जिंक सल्फ़ेट">Zinc sulphate</h3><p data-hi="धान-गेहूं में जिंक की कमी दूर करे">Fixes zinc deficiency in paddy and wheat</p></div></div>
+    <div class="card"><div class="bag" style="background:#5a3a22">ORGANIC<br>COMPOST</div><div><h3 data-hi="वर्मी कम्पोस्ट">Vermicompost</h3><p data-hi="थकी मिट्टी में जान डाले, नमी बचाए">Revives tired soil and holds moisture</p></div></div>
+  </div>
+</div></section>
+
+<section class="calc" id="calc"><div class="wrap">
+  <h2 data-hi="कितनी खाद चाहिए?">How much fertilizer do I need?</h2>
+  <p class="lead" data-hi="फ़सल और ज़मीन बताइए, मोटा अंदाज़ा तुरंत मिलेगा।">Pick your crop and land size for a quick estimate.</p>
+  <div class="panel">
+    <div>
+      <label for="crop" data-hi="फ़सल">Crop</label>
+      <select id="crop">
+        <option value="wheat" data-hi="गेहूं">Wheat</option>
+        <option value="paddy" data-hi="धान">Paddy</option>
+        <option value="maize" data-hi="मक्का">Maize</option>
+        <option value="mustard" data-hi="सरसों">Mustard</option>
+      </select>
+      <label for="acres" data-hi="ज़मीन (एकड़ में)">Land (acres)</label>
+      <input id="acres" type="number" min="0.1" step="0.1" value="1" inputmode="decimal">
+    </div>
+    <div class="out" aria-live="polite">
+      <div id="res"></div>
+      <p class="fine" data-hi="यह सिर्फ़ मोटा अंदाज़ा है। सही मात्रा मिट्टी की जाँच और दुकान की सलाह से तय करें।">This is a rough guide only. Confirm the exact dose with a soil test and our advice.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="visit"><div class="wrap visit">
+  <div class="info">
+    <h2 data-hi="दुकान पर आइए">Visit the shop</h2>
+    <p><b data-hi="मालिक:">Owner:</b> <span data-hi="वैभव सिंह">Vaibhav Singh</span></p>
+    <p><b data-hi="पता:">Address:</b> <span data-hi="मुख्य बाज़ार रोड, आपका शहर, ज़िला, राज्य – 000000">Main Market Road, Your Town, District, State – 000000</span></p>
+    <p><b data-hi="समय:">Hours:</b> <span data-hi="सोमवार–शनिवार सुबह 8 से शाम 7, रविवार सुबह 8 से दोपहर 1">Mon–Sat 8 am–7 pm, Sun 8 am–1 pm</span></p>
+  </div>
+  <div class="big">
+    <a class="wa" href="https://wa.me/910000000000" data-hi="WhatsApp पर संदेश भेजें">Message on WhatsApp</a>
+    <a class="ph" href="tel:+910000000000" data-hi="अभी फ़ोन करें: +91 00000 00000">Call now: +91 00000 00000</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Hariyali Agro Centre · Vaibhav Singh</div></footer>
+<a class="float" href="https://wa.me/910000000000" data-hi="WhatsApp">WhatsApp</a>
+
+<script>
+var L="en",K={wheat:[84,52,27],paddy:[84,52,40],maize:[84,52,27],mustard:[56,35,27]};
+var N={en:["Urea","DAP","Potash (MOP)","kg","bags"],hi:["यूरिया","डीएपी","पोटाश (एमओपी)","किलो","बोरी"]};
+var BAG=[45,50,50];
+function calc(){
+  var a=parseFloat(document.getElementById("acres").value);
+  var r=document.getElementById("res");
+  if(!(a>0)){r.textContent=L==="hi"?"ज़मीन सही भरें":"Enter the land size";return}
+  var k=K[document.getElementById("crop").value],n=N[L],h="";
+  for(var i=0;i<3;i++){
+    var kg=Math.round(k[i]*a);
+    h+='<div class="row"><span>'+n[i]+'<small>≈ '+(kg/BAG[i]).toFixed(1)+' '+n[4]+'</small></span><b>'+kg+' '+n[3]+'</b></div>';
+  }
+  r.innerHTML=h;
+}
+function setLang(l){
+  L=l;document.documentElement.lang=l;
+  document.querySelectorAll("[data-hi]").forEach(function(e){
+    if(!e.dataset.en)e.dataset.en=e.textContent;
+    e.textContent=l==="hi"?e.dataset.hi:e.dataset.en;
+  });
+  document.getElementById("lang").textContent=l==="hi"?"English":"हिंदी";
+  calc();
+}
+document.getElementById("lang").addEventListener("click",function(){setLang(L==="en"?"hi":"en")});
+document.getElementById("crop").addEventListener("change",calc);
+document.getElementById("acres").addEventListener("input",calc);
+document.getElementById("yr").textContent=new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>
